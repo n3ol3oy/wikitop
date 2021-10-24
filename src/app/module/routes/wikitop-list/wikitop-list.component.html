@@ -1,3 +1,7 @@
-<div *ngFor="let article of wikiTops">
-  <wikitop-article [article]="article"> </wikitop-article>
+<div class="wikitop-list">
+  <section class="wikitop-list__article-container">
+    <div *ngFor="let article of wikiTops">
+      <wikitop-article [article]="article"></wikitop-article>
+    </div>
+  </section>
 </div>
