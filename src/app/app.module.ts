@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WikitopArticleComponent } from './module/component/wikitop-article/wikitop-article.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [AppComponent, WikitopListComponent, WikitopArticleComponent],
@@ -18,7 +17,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
