@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WikitopService } from '../../service/wikitop.service';
 import { Wikitop } from '../../model/wikitop';
+import { Article } from '../../model/article';
 
 @Component({
   selector: 'wikitop-list',
@@ -8,13 +9,16 @@ import { Wikitop } from '../../model/wikitop';
   styleUrls: ['./wikitop-list.component.scss'],
 })
 export class WikitopListComponent implements OnInit {
-  wikiTops: Wikitop = { items: [] };
+  wikiTops: Article[] = [];
 
   constructor(private readonly wikiTopService: WikitopService) {}
 
   ngOnInit(): void {
     this.wikiTopService
       .getAllWikiArticles()
-      .subscribe((wikitop: Wikitop) => (this.wikiTops = wikitop));
+      .subscribe(
+        (wikitop: Wikitop): Article[] =>
+          (this.wikiTops = wikitop.items[0].articles)
+      );
   }
 }
