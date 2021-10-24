@@ -1,0 +1,9 @@
+.wikitop-list {
+  &__article-container {
+    direction: rtl;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    grid-gap: 1rem;
+    justify-content: center;
+  }
+}
