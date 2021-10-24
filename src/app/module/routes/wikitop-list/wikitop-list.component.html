@@ -1,4 +1,3 @@
-<pre>
-  {{ wikiTops | json }}
-
-</pre>
+<div *ngFor="let article of wikiTops">
+  <wikitop-article [article]="article"> </wikitop-article>
+</div>
