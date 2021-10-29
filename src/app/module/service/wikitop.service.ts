@@ -15,9 +15,11 @@ export class WikitopService {
 
   constructor(private readonly http: HttpClient) {}
 
-  getAllWikiArticles(): Observable<Wikitop> {
+  getAllWikiArticles(language: string = 'fa'): Observable<Wikitop> {
+    console.log(language);
+
     return this.http.get<Wikitop>(
-      `${this.BASE_URL}/${this.currentYear}/${this.currentMonth}/${this.currentDay}`
+      `https://wikimedia.org/api/rest_v1/metrics/pageviews/top/${language}.wikipedia.org/all-access/${this.currentYear}/${this.currentMonth}/${this.currentDay}`
     );
   }
 }
